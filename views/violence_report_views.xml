@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_violence_report_tree" model="ir.ui.view">
+        <field name="name">violence.report.tree</field>
+        <field name="model">violence.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="location"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_violence_report_form" model="ir.ui.view">
+        <field name="name">violence.report.form</field>
+        <field name="model">violence.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="location"/>
+                        <field name="description"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>    
+
+    <record id="action_violence_report" model="ir.actions.act_window">
+        <field name="name">Laporan Kekerasan</field>
+        <field name="res_model">violence.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+	
+	<menuitem id="menu_violence_report_root" name="Laporan Kekerasan"/>
+    <menuitem id="menu_violence_report" name="Laporan" parent="menu_violence_report_root" action="action_violence_report"/>
+	
+</odoo>
